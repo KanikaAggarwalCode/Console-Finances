@@ -114,3 +114,17 @@ var averageChange = averageTotal / (finances.length-1) ;
 
 console.log("Average Change: " + averageChange.toFixed(2));
 
+// Greatest Increase in Profits/Losses
+let maxIncreaseArray = [];
+var index1 = 0;
+
+for(var j=0; j<(finances.length-1); j++) {
+  maxIncreaseArray[j] = (finances[j+1][1] - finances[j][1]);
+}
+
+var maxIncreaseNumber = Math.max(...maxIncreaseArray)
+index1 = maxIncreaseArray.indexOf(maxIncreaseNumber);
+var A = finances[index1+1][0];
+
+console.log("Greatest Increase in Profits/Losses: " + A +" ($" + maxIncreaseNumber + ")");
+
