@@ -91,9 +91,11 @@ console.log("Financial Analysis");
 console.log("----------------")
 
 // Total Months
+
 var TotalMonths = console.log("Total Months: " + finances.length);
 
 // Total sum 
+
 var sumTotal = 0;
 
 for(var i=0; i<finances.length; i++) {
@@ -115,6 +117,7 @@ var averageChange = averageTotal / (finances.length-1) ;
 console.log("Average Change: " + averageChange.toFixed(2));
 
 // Greatest Increase in Profits/Losses
+
 let maxIncreaseArray = [];
 var index1 = 0;
 
@@ -128,3 +131,17 @@ var A = finances[index1+1][0];
 
 console.log("Greatest Increase in Profits/Losses: " + A +" ($" + maxIncreaseNumber + ")");
 
+// Greatest Decrease in Profits/Losses
+
+let maxDecreaseArray = [];
+var index2 = 0;
+
+for(var j=0; j<(finances.length-1); j++) {
+  maxDecreaseArray[j] = (finances[j+1][1] - finances[j][1]);
+}
+
+var maxDecreaseNumber = Math.min(...maxDecreaseArray);
+index2 = maxDecreaseArray.indexOf(maxDecreaseNumber);
+var C = finances[index2+1][0];
+
+console.log("Greatest Decrease in Profits/Losses: " + C +" ($" + maxDecreaseNumber + ")");
