@@ -86,3 +86,31 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+console.log("Financial Analysis");
+console.log("----------------")
+
+// Total Months
+var TotalMonths = console.log("Total Months: " + finances.length);
+
+// Total sum 
+var sumTotal = 0;
+
+for(var i=0; i<finances.length; i++) {
+  sumTotal = sumTotal + finances[i][1];
+}
+
+console.log("Total: $" + sumTotal);
+
+// Average Change
+
+var averageTotal = 0
+
+for(var i=0; i<(finances.length-1); i++) {
+  averageTotal = averageTotal + (finances[i+1][1] - finances[i][1]);
+}
+
+var averageChange = averageTotal / (finances.length-1) ;
+
+console.log("Average Change: " + averageChange.toFixed(2));
+
